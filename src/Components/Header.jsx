@@ -44,7 +44,7 @@ const Header = () => {
                     <div className="container">
                         <div className={styles['nav__box']}>
                             <Link to="/" className={styles['header__title']}>
-                                FAN VA TEXNOLOGIYALAR <span>UNIVERSITETI</span>
+                               {t("nameOfUniver")}<span>{t("nameOfUniverspan")}</span>
                             </Link>
                             <ul className={styles['nav__list']}>
                                 <li className={styles['nav__list-itm']}>
@@ -55,20 +55,20 @@ const Header = () => {
                                         <li className={`${styles['list__itm-link']} ${styles.on}`}>
                                             {t('team')}
                                             <ul className={styles.list}>
-                                                <li t className={styles['list__list']}>boshqaruv hodimlari</li>
-                                                <li className={styles['list__list']}>Akademik hodimlari</li>
+                                                <li t className={styles['list__list']}>{t("management_staff")}</li>
+                                                <li className={styles['list__list']}>{t("Academic_staff")}</li>
                                             </ul>
                                         </li>
-                                        <a className={styles['list__itm-link']}>Kampus</a>
+                                        <a className={styles['list__itm-link']}>{t("Campus")}</a>
                                     </ul>
                                 </li>
                                 {user ? (
                                     <>
                                         <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>QABUL 2025</a>
+                                            <a className={styles['nav__list-itm-link']}>{t("Acceptance")}</a>
                                             <ul className={styles['list__itm']}>
                                                 <li className={`${styles['list__itm-link']} ${styles.on}`}>
-                                                    Bakalavriat
+                                                    {t("Undergraduate")}
                                                     <ul className={styles.list}>
                                                         <li className={styles['list__list']}>Yonalishlar</li>
                                                         <li className={styles['list__list']}>1 Yonalish</li>
@@ -83,7 +83,7 @@ const Header = () => {
                                                     </ul>
                                                 </li>
                                                 <li className={`${styles['list__itm-link']} ${styles.on}`}>
-                                                    Magistratura
+                                                    {t("Master's_degree")}
                                                     <ul className={styles.list}>
                                                         <li className={styles['list__list']}>Yonalishlar</li>
                                                         <li className={styles['list__list']}>1 Yonalish</li>
@@ -92,12 +92,12 @@ const Header = () => {
                                                         <li className={styles['list__list']}>5 Yonalish</li>
                                                     </ul>
                                                 </li>
-                                                <li className={styles['list__itm-link']}>Oqishni Kochirish</li>
-                                                <a className={styles['list__itm-link']}>Grant va Stipendiyalar</a>
+                                                <li className={styles['list__itm-link']}>{t("Move_the_flow")}</li>
+                                                <a className={styles['list__itm-link']}>{t("Grants_and_Scholarships")}</a>
                                             </ul>
                                         </li>
                                         <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>USAT HAYOTI</a>
+                                            <a className={styles['nav__list-itm-link']}>{t("LIFE_OF_USAT")}</a>
                                             <ul className={styles['list__itm']}>
                                                 <li className={`${styles['list__itm-link']} ${styles.on}`}>
                                                     TALABALAR
@@ -122,14 +122,14 @@ const Header = () => {
                                             </ul>
                                         </li>
                                         <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>XALQARO HAMKORLIK</a>
+                                            <a className={styles['nav__list-itm-link']}>{t("INTERNATIONAL_COOPERATION")}</a>
                                             <ul className={styles['list__itm']}>
                                                 <li className={styles['list__itm-link']}>Hamkor universitetlar</li>
                                                 <li className={styles['list__itm-link']}>Work and Travel</li>
                                             </ul>
                                         </li>
                                         <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>ILMIY FAOLIYAT</a>
+                                            <a className={styles['nav__list-itm-link']}>{t("SCIENTIFIC_ACTIVITY")}</a>
                                             <ul className={styles['list__itm']}>
                                                 <li className={styles['list__itm-link']}>Ilmiy jurnal</li>
                                                 <li className={styles['list__itm-link']}>E-LIBRARY</li>
@@ -144,7 +144,7 @@ const Header = () => {
                                             </ul>
                                         </li>
                                         <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>BO`SH ISH ORINLARI</a>
+                                            <a className={styles['nav__list-itm-link']}>{t("VACANCIES")}</a>
                                             <ul className={styles['list__itm']}>
                                                 <li className={styles['list__itm-link']}>Akademik vakansiyalar</li>
                                                 <li className={styles['list__itm-link']}>Mamuriy va boshqa lavomzimlari</li>
@@ -152,7 +152,7 @@ const Header = () => {
                                             </ul>
                                         </li>
                                         <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>BIZ BILAN ALOQA</a>
+                                            <a className={styles['nav__list-itm-link']}>{t("CONTACT_US")}</a>
                                             <ul className={styles['list__itm']}>
                                                 <li className={styles['list__itm-link']}>USAT bayrog`i</li>
                                                 <li className={styles['list__itm-link']}>USAT gerbi</li>
@@ -162,8 +162,8 @@ const Header = () => {
                                     </>
                                 ) : null}
                                 {user ?
-                                    (<button className='vxod' onClick={() => logoutUser()}>выход</button>)
-                                    : (<button className='vxod' onClick={() => navigate('/login')}>Войти</button>)}
+                                    (<button className={styles.Output} onClick={() => logoutUser()}>{t("output")}</button>)
+                                    : (<button className={styles.Output} onClick={() => navigate('/login')}>Войти</button>)}
 
                                 <li><select className={styles.selected} value={i18n.language} onChange={handleChange}>
                                     <option className={styles.optin} value="en">EN</option>

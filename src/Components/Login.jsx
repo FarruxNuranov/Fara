@@ -1,57 +1,78 @@
 import styles from './Login.module.scss'
-import { useDispatch} from 'react-redux'
-import {  login } from '../store/UserSlice'
-import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../store/UserSlice'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 const Login = () => {
 
 
 
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const registeredUsers = useSelector(state => state.user.registeredUsers);
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
 
-const navigate = useNavigate()
-
-
-
-const handleSubmit = (e) => {
-    e.preventDefault(); 
  
-   
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const foundUser = registeredUsers.find(
+      (user) => user.username === username && user.password === password
+    );
+
+    if (foundUser) {
+      dispatch(login({
+        user: foundUser,
+      
+        
+      })
+    );
+    console.log( registeredUsers)
+      navigate('/');
+    } else {
+      alert('Неверный логин или пароль');
+      
+    }
   };
 
 
 
-function Vxod () {
-    dispatch(login(true))
-    navigate('/')
-    
-}
+
+
+
 
 
   return (
     <>
-             <div className="container">
-    <section className={styles.login__box}>
-             <form onSubmit={handleSubmit} action="" className={styles.login__form}>
-                <input 
-                type="text"
-                 placeholder='Введите логин' 
-                 className={styles.login__input} />
+      <div className="container">
+        <section className={styles.login__box}>
+          <h2>ВХОД</h2>
+          <form onSubmit={handleSubmit} action="" className={styles.login__form}>
+            <input
+              type="text"
+              placeholder='Введите логин'
+              className={styles.login__input}
+              onChange={(e) => setUsername(e.target.value)} />
 
 
-                <input
-                 type="text" 
-                 placeholder='Введите пароль' 
-                 className={styles.login__input} />
+            <input
+              type="text"
+              placeholder='Введите пароль'
+              className={styles.login__input}
+              onChange={(e) => setPassword(e.target.value)} />
 
 
-                <button onClick={() =>  Vxod()} className={styles.login__button}>Войти</button>
-             </form>
-          
-           </section>
-               </div>
-        
-     </>
+            <button className={styles.login__button}>Войти</button>
+          </form>
+          <Link to={"/registration"}>Регистрация</Link>
+
+        </section>
+      </div>
+
+    </>
   )
 }
 

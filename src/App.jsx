@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import Login from './Components/Login'
 
 import PrivateRoute from './Components/PrivateRoute'
+import RegistrationPage from './Components/RegistrationPage'
 
 
 
@@ -88,6 +89,7 @@ useEffect(() => {
         <Header />
         <Routes>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/registration' element={<RegistrationPage/>}/> 
           <Route time={time} path='/' element={ <Hero />} />
           <Route path='/rector' element={<Rector />} />
         </Routes>

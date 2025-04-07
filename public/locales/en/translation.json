@@ -2,7 +2,24 @@
     "about": "ABOUT",
     "Rector": "Address of the Rector",
     "Univers": "Information about the University",
-     "team": "Our team"
+     "team": "Our team",
+     "nameOfUniver": "UNIVERSITY OF SCIENCE",
+     "nameOfUniverspan": "AND TECHNOLOGY",
+     "Acceptance": "ACCEPTANCE 2025",
+     "LIFE_OF_USAT": "LIFE OF USAT",
+     "INTERNATIONAL_COOPERATION": "INTERNATIONAL COOPERATION",
+     "SCIENTIFIC_ACTIVITY": "SCIENTIFIC ACTIVITY",
+     "VACANCIES" : "VACANCIES",
+     "CONTACT_US": "CONTACT US",
+     "output": "OUTPUT",
+     "management_staff": "Management staff",
+     "Academic_staff" : "Academic staff",
+     "Campus" : "Campus",
+     "Undergraduate" : "Undergraduate",
+     "Master's_degree": "Master's degree",
+     "Move_the_flow" : "Move the flow",
+     "Grants_and_Scholarships": "Grants and Scholarships"
+    
 
     
   }

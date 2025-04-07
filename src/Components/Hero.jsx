@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Pagination } from 'swiper/modules';
 import AnimatedCounter from '../ui/AnimatedCounter.jsx'
+import { useSelector } from 'react-redux';
 
 
 const videoFiles = [video1, video2, video3, video4];
@@ -16,7 +17,14 @@ const videoFiles = [video1, video2, video3, video4];
 
 
 
+
 const Hero = () => {
+
+
+  const userLog = useSelector(state => state.user.user)
+
+
+
   return (
   
      
@@ -40,6 +48,7 @@ const Hero = () => {
           </section>
           <section className={styles['home__title']}>
             <div className="container">
+              <div className={styles.name}>{userLog && `Здравствуйте ${userLog?.username || ''}`}</div>
               <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
