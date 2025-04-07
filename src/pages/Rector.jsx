@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Rector.module.scss';
 import { avat,  } from '../utils/getimg';
+import Loader from '../Components/Loader';
+
 
 const Rector = () => {
+
+const [loading, setLoading] = useState(false)
+
+
+
+useEffect(() => {
+  setTimeout(() => {
+    setLoading(true)
+  }, 1000);
+  
+}, [loading])
+
+
+
+
+
+
+
   return (
     <>
-    <section className={styles['home__title']}>
+   {loading ?  <section className={styles['home__title']}>
             <div className="container">
             <div className={styles["home__box"]}>
                 <div className={styles['home__left']}>
@@ -20,6 +40,7 @@ const Rector = () => {
               </div>
             </div>
           </section>
+          : <Loader/> }
     </>
   )
 }

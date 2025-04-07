@@ -5,15 +5,15 @@ import { bib, bild, ditori, star } from '../utils/getimg';
 
 const Footer = () => {
   return (
-    <footer className={styles['footer']}>
+    <footer  className={styles['footer']}>
       <div className="container">
-        <div className={styles["footer__box"]}>
+        <div data-aos="fade-up" className={styles["footer__box"]}>
           <h3 className={styles["footer__title"]}>UNIVERSITET HAQIDA</h3>
           <p className={styles["footer__text"]}>Bugungi kunga qadar universitet O‘zbekiston va xorijdagi xalqaro universitetlar va ta’lim tashkilotlari bilan hamkorlik qilib, bakalavriat va magistratura ixtisosliklari bo‘yicha ta’lim dasturlari hamda kadrlar tayyorlash va qayta tayyorlash dasturlarini amalga oshiradi.</p>
         </div>
 
 
-        <div className={styles['footer__grid-box']}>
+        <div data-aos="fade-up" className={styles['footer__grid-box']}>
           <div className={styles["footer__item"]}>
             <div className={styles['footer_icon']}>
               <img src={bild} alt="icon__img" className={styles.icon} />

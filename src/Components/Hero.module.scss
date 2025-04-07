@@ -19,7 +19,7 @@
   }
   
   .video-item {
-    width: 100%;
+    width: 100.1%;
     filter: brightness(0.7); 
     transition: 800ms;
     object-fit: cover;
@@ -128,7 +128,8 @@
   .home__left-title {
     font-size: 50px;
     color: white;
-    font-weight: 600;
+    font-weight: 700;
+    text-align: center;
   }
 
   .home__left-text {

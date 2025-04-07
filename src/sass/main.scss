@@ -3,11 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 
+
   
 }
 
 body {
   background: rgb(255, 255, 255);
+  
+  
 }
 
 a {
@@ -23,6 +26,50 @@ ul {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+.wrapper{
+  position: relative;
+  
+ 
+}
+
+.mouse{
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ff0000;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  z-index: 9999;
+
+}
+
+
+.vxod {
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 10px;
+  
+ 
+  outline: none;
+  border: 1px solid white;
+  background: white;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: aqua;
+    color: rgb(5, 5, 5)
+  }
+}
+
+
 
 
 @import '../sass/fonts.scss';
