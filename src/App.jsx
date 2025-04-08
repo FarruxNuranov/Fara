@@ -10,9 +10,8 @@ import Loader from './Components/Loader'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Login from './Components/Login'
-
-import PrivateRoute from './Components/PrivateRoute'
 import RegistrationPage from './Components/RegistrationPage'
+import { useSelector } from 'react-redux'
 
 
 
@@ -24,10 +23,17 @@ function App() {
 
 const [time, setTime] = useState(false)
 
+const {user} = useSelector(state => state.user)
+
 const navigate = useNavigate()
 
 useEffect(() => {
-  navigate('/')
+  if(user){
+    navigate('/')
+  }else {
+    navigate('login')
+  }
+  
 }, [])
 
 

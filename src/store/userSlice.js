@@ -5,8 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || null,
   registeredUsers: JSON.parse(localStorage.getItem('registeredUsers')) || [],
-  accessToken:  null,
-  refreshToken: null
+  
 
 };
 
@@ -18,6 +17,7 @@ const userSlice = createSlice({
   reducers: {
     login(state, action) {
       state.user = action.payload;
+      localStorage.setItem('user', JSON.stringify(action.payload));
     
 
   
@@ -26,7 +26,7 @@ const userSlice = createSlice({
     Registration(state, action) {
       state.user = action.payload;
       state.registeredUsers.push(action.payload);
-     
+      
       localStorage.setItem('registeredUsers', JSON.stringify(state.registeredUsers));
 
      
@@ -35,13 +35,12 @@ const userSlice = createSlice({
     },
     logout(state) {
       state.user = null;
+      
+      localStorage.removeItem('user');
      
     
     },
-    refreshAccessToken(state, action) {
-      state.accessToken = action.payload;
-      localStorage.setItem('accessToken', action.payload);
-    }
+  
   },
 });
 

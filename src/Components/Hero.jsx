@@ -14,10 +14,6 @@ const videoFiles = [video1, video2, video3, video4];
 
 
 
-
-
-
-
 const Hero = () => {
 
 
@@ -48,7 +44,7 @@ const Hero = () => {
           </section>
           <section className={styles['home__title']}>
             <div className="container">
-              <div className={styles.name}>{userLog && `Здравствуйте ${userLog?.username || ''}`}</div>
+              <div className={styles.name}>{userLog && `Здравствуйте ${userLog?.user.username || ''}`}</div>
               <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
