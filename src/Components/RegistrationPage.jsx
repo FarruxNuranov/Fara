@@ -8,7 +8,8 @@ const RegistrationPage = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-   
+    const [email, setEmail] = useState('');
+    const [number, setNumber] = useState('');
 
 
 
@@ -37,7 +38,9 @@ const RegistrationPage = () => {
     return (
         <div className="container">
             <section className={styles.login__box}>
+            <div className={styles.form__box}>
             <h2>Регистрация</h2>
+
                 <form onSubmit={handleSubmit} className={styles.login__form}>
                     <input
                         type="text"
@@ -45,7 +48,7 @@ const RegistrationPage = () => {
                         className={styles.login__input}
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                    />
+                        />
 
                     <input
                         type="password"
@@ -53,15 +56,30 @@ const RegistrationPage = () => {
                         className={styles.login__input}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                    />
+                        />
+                    <input
+                        type="password"
+                        placeholder="Введите Email"
+                        className={styles.login__input}
+                        value={password}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                    <input
+                        type="password"
+                        placeholder="Введите номер телефона"
+                        className={styles.login__input}
+                        value={password}
+                        onChange={(e) => setNumber(e.target.value)}
+                        />
 
                
 
                     <button type="submit" className={styles.login__button}>
-                    Зарегистрироваться
+                     Ro`yxatdan o`tish
                     </button>
                 </form>
                 <Link to={"/login"}>Уже есть аккаунт ?</Link>
+                        </div>
             </section>
         </div>
     );

@@ -13,6 +13,7 @@ const Login = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  
 
 
  
@@ -49,6 +50,7 @@ const Login = () => {
     <>
       <div className="container">
         <section className={styles.login__box}>
+          <div className={styles.form__box}>
           <h2>ВХОД</h2>
           <form onSubmit={handleSubmit} action="" className={styles.login__form}>
             <input
@@ -63,11 +65,13 @@ const Login = () => {
               placeholder='Введите пароль'
               className={styles.login__input}
               onChange={(e) => setPassword(e.target.value)} />
+        
 
 
             <button className={styles.login__button}>Войти</button>
           </form>
           <Link to={"/registration"}>Регистрация</Link>
+          </div>
 
         </section>
       </div>

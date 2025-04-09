@@ -5,6 +5,7 @@ import Burger from './Burger';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../store/userSlice';
+import { avaicon } from '../utils/getimg';
 
 
 
@@ -62,8 +63,6 @@ const Header = () => {
                                         <a className={styles['list__itm-link']}>{t("Campus")}</a>
                                     </ul>
                                 </li>
-                                {user ? (
-                                    <>
                                         <li className={styles['nav__list-itm']}>
                                             <a className={styles['nav__list-itm-link']}>{t("Acceptance")}</a>
                                             <ul className={styles['list__itm']}>
@@ -151,14 +150,12 @@ const Header = () => {
                                                 <li className={styles['list__itm-link']}>Volontyorlik</li>
                                             </ul>
                                         </li>
-                                        <li className={styles['nav__list-itm']}>
-                                            <a className={styles['nav__list-itm-link']}>{t("CONTACT_US")}</a>
-                                            <ul className={styles['list__itm']}>
-                                                <li className={styles['list__itm-link']}>USAT bayrog`i</li>
-                                                <li className={styles['list__itm-link']}>USAT gerbi</li>
-                                                <li className={styles['list__itm-link']}>USAT madgiyasi</li>
-                                            </ul>
-                                        </li>
+                                        
+                                {user ? (
+                                    <>
+                                        <Link to={"/"} className={styles['nav__list-itm']}>
+                                         <img className={styles.Page} src={avaicon} alt="" />
+                                        </Link>
                                     </>
                                 ) : null}
                                 {user ?

@@ -55,41 +55,15 @@ useEffect(() => {
  }, 1000);
 }, [time])
 
-useEffect(() => {
-  const mouse = document.querySelector(".mouse");
 
-  let mouseX = 0;
-  let mouseY = 0;
-  let currentX = 0;
-  let currentY = 0;
-  let speed = 0.2; 
 
-  const animate = () => {
-    currentX += (mouseX - currentX) * speed;
-    currentY += (mouseY - currentY) * speed;
-    mouse.style.left = `${currentX}px`;
-    mouse.style.top = `${currentY}px`;
-    requestAnimationFrame(animate);
-  };
 
-  const moveCursor = (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  };
-
-  window.addEventListener("mousemove", moveCursor);
-  requestAnimationFrame(animate);
-
-  return () => {
-    window.removeEventListener("mousemove", moveCursor);
-  };
-}, []);
 
 
   return (
     <>
   <div className="wrapper">
-   <div className="mouse"></div>
+  
   {time ? (
       <>
         <Header />

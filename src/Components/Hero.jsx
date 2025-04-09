@@ -44,7 +44,7 @@ const Hero = () => {
           </section>
           <section className={styles['home__title']}>
             <div className="container">
-              <div className={styles.name}>{userLog && `Здравствуйте ${userLog?.user.username || ''}`}</div>
+         
               <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
